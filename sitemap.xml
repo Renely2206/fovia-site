@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://fovia.fr/</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://fovia.fr/association.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fovia.fr/actions.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fovia.fr/projets.html</loc><lastmod>2026-09-19</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fovia.fr/rejoindre.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://fovia.fr/dons.html</loc><lastmod>2026-09-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://fovia.fr/contact.html</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://fovia.fr/mentions-legales.html</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fovia.fr/confidentialite.html</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fovia.fr/cgu.html</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://fovia.fr/accessibilite.html</loc><lastmod>2026-09-19</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

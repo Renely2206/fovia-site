@@ -1,6 +1,34 @@
 <!doctype html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="FOVIA — Formation, Opportunités, Valorisation, Inclusion, Autonomie."><title>Contact — FOVIA</title><link rel="stylesheet" href="css/style.css"></head>
+<html lang="fr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — FOVIA</title>
+<meta name="description" content="Une idée, un besoin, un projet ? Contactez l'association FOVIA.">
+<link rel="canonical" href="https://fovia.fr/contact.html">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#082b52">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="FOVIA">
+<meta property="og:title" content="Contacter FOVIA">
+<meta property="og:description" content="Une idée, un besoin, un projet ? Contactez l'association FOVIA.">
+<meta property="og:url" content="https://fovia.fr/contact.html">
+<meta property="og:image" content="https://fovia.fr/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="FOVIA — Formation, Opportunités, Valorisation, Inclusion, Autonomie">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contacter FOVIA">
+<meta name="twitter:description" content="Une idée, un besoin, un projet ? Contactez l'association FOVIA.">
+<meta name="twitter:image" content="https://fovia.fr/img/og-image.png">
+
+<link rel="stylesheet" href="css/style.css"></head>
 <body><a class="skip" href="#main">Aller au contenu</a>
 <header>
   <div class="wrap nav">
@@ -19,13 +47,36 @@
 <main id="main">
 <section class="page-hero"><div class="wrap"><p class="eyebrow">Contact</p><h1>Une idée, un besoin, un projet ?</h1><p>Écrivez-nous via notre adresse professionnelle.</p></div></section>
 <section class="section"><div class="wrap two"><div><p class="eyebrow">FOVIA</p><h2>Parlons de votre projet.</h2><p>Vous pouvez nous contacter pour une demande d'information, une proposition de partenariat, du bénévolat ou un projet.</p><p><strong>Alfred.association@fovia.fr</strong></p></div>
-<form onsubmit="return contact(event)"><label for="name">Nom</label><input id="name" required><label for="email">Adresse e-mail</label><input id="email" type="email" required><label for="message">Votre message</label><textarea id="message" rows="7" required></textarea><button class="button yellow">Préparer mon message</button><p id="status" role="status"></p></form></div></section>
+<form id="contact-form" novalidate>
+<div class="field"><label for="name">Nom</label><input id="name" name="name" required minlength="2" maxlength="100" autocomplete="name" aria-describedby="name-error"><span class="field-error" id="name-error" role="alert"></span></div>
+<div class="field"><label for="email">Adresse e-mail</label><input id="email" name="email" type="email" required maxlength="150" autocomplete="email" aria-describedby="email-error"><span class="field-error" id="email-error" role="alert"></span></div>
+<div class="field"><label for="message">Votre message</label><textarea id="message" name="message" rows="7" required minlength="10" maxlength="2000" aria-describedby="message-error"></textarea><span class="field-error" id="message-error" role="alert"></span></div>
+<div class="hp-field" aria-hidden="true"><label for="website">Laissez ce champ vide</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+<input type="hidden" id="form-loaded-at" value="">
+<label class="consent"><input type="checkbox" id="consent" required aria-describedby="consent-error"> J'accepte que les informations transmises soient utilisées pour traiter ma demande, conformément à la <a href="confidentialite.html">politique de confidentialité</a>.</label>
+<span class="field-error" id="consent-error" role="alert"></span>
+<button class="button yellow" type="submit">Préparer mon message</button>
+<p id="status" role="status"></p>
+</form></div></section>
 </main>
 <footer><div class="wrap footer-grid">
 <div><strong>FOVIA</strong><p>Formation · Opportunités · Valorisation · Inclusion · Autonomie</p><p>« Les possibilités avant les limites, chaque différence à sa place. »</p></div>
 <div><h2>Navigation</h2><a href="association.html">L'association</a><a href="actions.html">Nos actions</a><a href="projets.html">Nos projets</a><a href="rejoindre.html">Nous rejoindre</a></div>
-<div><h2>Informations</h2><a href="dons.html">Faire un don</a><a href="contact.html">Contact</a><a href="#">Mentions légales</a><a href="#">Confidentialité</a><a href="#">Accessibilité</a></div>
+<div><h2>Informations</h2><a href="dons.html">Faire un don</a><a href="contact.html">Contact</a><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="cgu.html">CGU</a><a href="accessibilite.html">Accessibilité</a></div>
 <div><h2>Contact</h2><p>Alfred.association@fovia.fr</p><p>Paris · France</p></div>
 </div><div class="wrap bottom">© <span id="year"></span> FOVIA <span>Site en construction évolutive</span></div></footer>
-<script src="js/script.js"></script>
+<div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Gestion des cookies" hidden>
+  <div class="wrap cookie-in">
+    <div class="cookie-text">
+      <p><strong>Gestion des cookies</strong></p>
+      <p>FOVIA n'utilise pas de cookies publicitaires. Un outil de mesure d'audience respectueux de la vie privée peut être activé pour comprendre la fréquentation du site. Vous pouvez l'accepter ou le refuser à tout moment — voir notre <a href="confidentialite.html">politique de confidentialité</a>.</p>
+    </div>
+    <div class="cookie-actions">
+      <button type="button" class="button ghost" id="cookie-refuse">Refuser</button>
+      <button type="button" class="button dark" id="cookie-accept">Accepter</button>
+    </div>
+  </div>
+</div>
+<script src="js/script.js" defer></script>
+<script src="js/cookies.js" defer></script>
 </body></html>
