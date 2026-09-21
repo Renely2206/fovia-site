@@ -104,3 +104,6 @@ ne peux pas inventer à votre place) :
   réellement l'analytics.
 - Me confirmer l'hébergeur final si ce n'est pas un Apache classique,
   pour adapter la configuration HTTPS/cache.
+
+VERSION 3 — BARRE BLEUE CENTRÉE DANS LA BANDE JAUNE
+La bande jaune des cinq axes est conservée. La barre bleue est centrée à l'intérieur et reprend les textes Formation, Opportunités, Valorisation, Inclusion et Autonomie.
