@@ -22,7 +22,7 @@ document.querySelectorAll('#legal-date').forEach((el) => {
   el.textContent = new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' });
 });
 
-// Formulaire de contact : validation + anti-spam (honeypot + délai minimal) + envoi via mailto
+// Formulaire de contact : validation + anti-spam + envoi AJAX via FormSubmit
 const contactForm = document.querySelector('#contact-form');
 if (contactForm) {
   const loadedAtField = document.querySelector('#form-loaded-at');
@@ -62,16 +62,14 @@ if (contactForm) {
     return ok;
   }
 
-  contactForm.addEventListener('submit', function (e) {
+  contactForm.addEventListener('submit', async function (e) {
     e.preventDefault();
     const status = document.querySelector('#status');
+    const submitButton = contactForm.querySelector('button[type="submit"]');
 
     // Honeypot : un champ invisible pour les humains, souvent rempli par les robots
     const honeypot = document.querySelector('#website');
-    if (honeypot && honeypot.value.trim() !== '') {
-      // On ne montre pas d'erreur explicite à un robot ; on bloque simplement l'envoi.
-      return false;
-    }
+    if (honeypot && honeypot.value.trim() !== '') return false;
 
     // Délai minimal entre l'affichage du formulaire et l'envoi (protection anti-bot simple)
     const loadedAt = Number(loadedAtField && loadedAtField.value);
@@ -89,9 +87,38 @@ if (contactForm) {
     const em = fields.email.el.value.trim();
     const m = fields.message.el.value.trim();
 
-    if (status) status.textContent = 'Ouverture de votre messagerie…';
-    location.href = 'mailto:Alfred.association@fovia.fr?subject=' + encodeURIComponent('Contact FOVIA — ' + n) +
-      '&body=' + encodeURIComponent('Nom : ' + n + '\nE-mail : ' + em + '\n\n' + m);
+    if (submitButton) submitButton.disabled = true;
+    if (status) status.textContent = 'Envoi de votre message…';
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/Alfred.association@fovia.fr', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: n,
+          email: em,
+          message: m,
+          _subject: 'Contact FOVIA — ' + n,
+          _url: 'https://fovia.fr/contact.html',
+          _template: 'table'
+        })
+      });
+
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || data.success === false) throw new Error('Formulaire non envoyé');
+
+      contactForm.reset();
+      if (loadedAtField) loadedAtField.value = Date.now();
+      if (status) status.textContent = '✅ Votre message a bien été envoyé. Nous vous répondrons prochainement.';
+    } catch (error) {
+      if (status) status.textContent = '❌ Une erreur est survenue. Vous pouvez nous écrire directement à Alfred.association@fovia.fr.';
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+    }
+
     return false;
   });
 }

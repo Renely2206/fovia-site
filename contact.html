@@ -51,11 +51,13 @@
 <div class="field"><label for="name">Nom</label><input id="name" name="name" required minlength="2" maxlength="100" autocomplete="name" aria-describedby="name-error"><span class="field-error" id="name-error" role="alert"></span></div>
 <div class="field"><label for="email">Adresse e-mail</label><input id="email" name="email" type="email" required maxlength="150" autocomplete="email" aria-describedby="email-error"><span class="field-error" id="email-error" role="alert"></span></div>
 <div class="field"><label for="message">Votre message</label><textarea id="message" name="message" rows="7" required minlength="10" maxlength="2000" aria-describedby="message-error"></textarea><span class="field-error" id="message-error" role="alert"></span></div>
-<div class="hp-field" aria-hidden="true"><label for="website">Laissez ce champ vide</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+<div class="hp-field" aria-hidden="true"><label for="website">Laissez ce champ vide</label><input id="website" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+<input type="hidden" name="_url" value="https://fovia.fr/contact.html">
+<input type="hidden" name="_template" value="table">
 <input type="hidden" id="form-loaded-at" value="">
 <label class="consent"><input type="checkbox" id="consent" required aria-describedby="consent-error"> J'accepte que les informations transmises soient utilisées pour traiter ma demande, conformément à la <a href="confidentialite.html">politique de confidentialité</a>.</label>
 <span class="field-error" id="consent-error" role="alert"></span>
-<button class="button yellow" type="submit">Préparer mon message</button>
+<button class="button yellow" type="submit">Envoyer le message</button>
 <p id="status" role="status"></p>
 </form></div></section>
 </main>
